@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CertiMed AI Panamá: prototipo de gestión y verificación documental médica.">
+  <meta name="theme-color" content="#0b3b63">
+  <title>CertiMed AI Panamá | Plataforma demostrativa</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+  <header class="topbar">
+    <a class="brand" href="#" data-page="inicio" aria-label="CertiMed AI Panamá, inicio">
+      <img src="assets/logo.svg" alt="" width="42" height="42">
+      <span><strong>CertiMed AI</strong><small>PANAMÁ · DEMO</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="nav">☰</button>
+    <nav id="nav" aria-label="Navegación principal">
+      <button data-page="inicio" class="nav-link active">Inicio</button>
+      <button data-page="medico" class="nav-link">Portal médico</button>
+      <button data-page="paciente" class="nav-link">Paciente</button>
+      <button data-page="empresa" class="nav-link">Empresas / RRHH</button>
+      <button data-page="verificar" class="nav-link">Verificar</button>
+      <button data-page="inteligencia" class="nav-link">CertiMed Intelligence</button>
+      <button data-page="admin" class="nav-link">Administración</button>
+    </nav>
+  </header>
+
+  <div class="demo-banner"><span class="dot"></span> PROTOTIPO DEMOSTRATIVO · No emite ni valida certificados médicos reales</div>
+
+  <main id="main">
+    <section class="page active" id="page-inicio">
+      <div class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">INNOVACIÓN DOCUMENTAL SANITARIA</span>
+          <h1>La confianza médica,<br><em>verificada digitalmente.</em></h1>
+          <p>Una propuesta tecnológica para facilitar la gestión y verificación documental, con trazabilidad, privacidad y herramientas inteligentes.</p>
+          <div class="hero-actions">
+            <button class="btn primary" data-page="verificar">Explorar verificación <span>→</span></button>
+            <button class="btn secondary" data-page="medico">Ver demostración médica</button>
+          </div>
+          <p class="micro">Proyecto independiente en fase de prototipo. Sin afiliación ni aprobación institucional.</p>
+        </div>
+        <div class="hero-card">
+          <div class="card-top"><span class="badge blue">DOCUMENTO DEMO</span><span class="shield">✓</span></div>
+          <div class="doc-icon">▤</div>
+          <h3>Registro documental</h3>
+          <p class="muted">Ejemplo ficticio · CM-DEMO-001</p>
+          <div class="doc-line"><span>Estado de demostración</span><strong class="green">Muestra</strong></div>
+          <div class="doc-line"><span>Identificador</span><strong>CM-DEMO-001</strong></div>
+          <div class="doc-line"><span>Verificación</span><strong>Simulada</strong></div>
+          <div class="fake-qr" aria-label="QR simulado"><span>CM<br>DEMO</span></div>
+          <p class="micro center">Código visual no escaneable</p>
+        </div>
+      </div>
+      <div class="section-head"><div><span class="eyebrow">PLATAFORMA</span><h2>Un ecosistema documental</h2></div><p>Diseñado para explorar flujos antes de cualquier integración real.</p></div>
+      <div class="grid feature-grid">
+        <article class="feature"><div class="feature-icon">✚</div><h3>Portal médico</h3><p>Flujo ilustrativo de creación y gestión de documentos.</p><button class="text-button" data-page="medico">Abrir módulo →</button></article>
+        <article class="feature"><div class="feature-icon">♙</div><h3>Portal paciente</h3><p>Vista conceptual de consulta y descarga de documentos propios.</p><button class="text-button" data-page="paciente">Abrir módulo →</button></article>
+        <article class="feature"><div class="feature-icon">▦</div><h3>Empresas y RRHH</h3><p>Consulta de estado con minimización de información sensible.</p><button class="text-button" data-page="empresa">Abrir módulo →</button></article>
+        <article class="feature"><div class="feature-icon">⌕</div><h3>Verificación</h3><p>Consulta simulada de un identificador de demostración.</p><button class="text-button" data-page="verificar">Verificar demo →</button></article>
+      </div>
+      <div class="notice"><strong>Privacidad desde el diseño.</strong> Un empleador no debería acceder a diagnósticos ni detalles clínicos que no sean necesarios. El acceso real deberá definirse conforme a la normativa y autorización aplicables.</div>
+    </section>
+
+    <section class="page" id="page-medico">
+      <div class="page-heading"><span class="eyebrow">MÓDULO 01</span><h1>Portal médico</h1><p>Vista de demostración para profesionales. No emite certificados reales.</p></div>
+      <div class="two-col">
+        <div class="panel"><div class="panel-title"><h2>Nuevo registro demo</h2><span class="badge">Ficticio</span></div>
+          <form id="demoForm">
+            <label>Paciente de muestra<input value="Paciente Demo" disabled></label>
+            <label>Fecha de atención<input type="date" id="demoDate" required></label>
+            <label>Duración ilustrativa<select id="demoDays"><option>1 día</option><option>2 días</option><option>3 días</option></select></label>
+            <label>Nota no clínica<textarea placeholder="Ej.: documento de prueba (no incluir diagnósticos)" rows="3"></textarea></label>
+            <button class="btn primary full" type="submit">Crear registro ficticio</button>
+          </form><div id="formMessage" class="message" aria-live="polite"></div>
+        </div>
+        <div class="panel"><div class="panel-title"><h2>Actividad reciente</h2><span class="badge green">Demo</span></div><div id="records" class="records"></div></div>
+      </div>
+    </section>
+
+    <section class="page" id="page-paciente">
+      <div class="page-heading"><span class="eyebrow">MÓDULO 02</span><h1>Portal paciente</h1><p>Concepto de acceso personal a documentos propios.</p></div>
+      <div class="panel narrow"><div class="empty-icon">♙</div><h2>Tu documentación, bajo tu control</h2><p>En una versión real, el paciente iniciaría sesión con mecanismos seguros y consultaría únicamente sus documentos autorizados.</p><div class="notice">Esta demo no tiene cuentas, autenticación ni documentos personales.</div></div>
+    </section>
+
+    <section class="page" id="page-empresa">
+      <div class="page-heading"><span class="eyebrow">MÓDULO 03</span><h1>Empresas y Recursos Humanos</h1><p>Consulta demostrativa de estado documental, sin datos clínicos.</p></div>
+      <div class="panel"><div class="panel-title"><h2>Registro de muestra</h2><span class="badge blue">Ficticio</span></div><div class="table-wrap"><table><thead><tr><th>ID</th><th>Colaborador</th><th>Estado</th><th>Detalle</th></tr></thead><tbody><tr><td>CM-DEMO-001</td><td>Colaborador Demo</td><td><span class="status">Muestra</span></td><td>Documento ficticio</td></tr></tbody></table></div><p class="micro">El diseño final deberá limitar los datos visibles a lo estrictamente necesario y autorizado.</p></div>
+    </section>
+
+    <section class="page" id="page-verificar">
+      <div class="page-heading"><span class="eyebrow">MÓDULO 04</span><h1>Verificación documental</h1><p>Introduce el identificador ficticio para probar la experiencia.</p></div>
+      <div class="panel narrow"><form id="verifyForm"><label>Identificador de demostración<input id="verifyId" placeholder="Ej. CM-DEMO-001" autocomplete="off"></label><button class="btn primary full" type="submit">Consultar registro demo</button></form><div id="verifyResult" class="verify-result" aria-live="polite"><div class="empty-icon">⌕</div><p>El resultado aparecerá aquí.</p></div><div class="notice">La consulta es local y simulada. No verifica certificados emitidos por médicos ni instituciones.</div></div>
+    </section>
+
+    <section class="page" id="page-inteligencia">
+      <div class="page-heading"><span class="eyebrow">MÓDULO 05</span><h1>CertiMed Intelligence</h1><p>Diseño previsto para incorporar IA open source autoalojada, sin API comercial.</p></div>
+      <div class="grid three">
+        <article class="feature"><div class="feature-icon">⌁</div><h3>OCR</h3><p>Extracción de texto desde documentos, con revisión humana.</p><span class="badge">Fase futura</span></article>
+        <article class="feature"><div class="feature-icon">◇</div><h3>Consistencia</h3><p>Reglas para detectar campos faltantes o fechas incoherentes.</p><span class="badge">Reglas demo</span></article>
+        <article class="feature"><div class="feature-icon">✧</div><h3>Modelo local</h3><p>Modelo open source en servidor controlado, sujeto a recursos y licencia.</p><span class="badge">No conectado</span></article>
+      </div>
+      <div class="notice"><strong>Estado actual:</strong> no hay modelo de IA ejecutándose. La interfaz no analiza documentos ni toma decisiones médicas.</div>
+    </section>
+
+    <section class="page" id="page-admin">
+      <div class="page-heading"><span class="eyebrow">MÓDULO 06</span><h1>Administración</h1><p>Indicadores ilustrativos del prototipo local.</p></div>
+      <div class="grid three stats"><div class="stat"><span>Registros demo</span><strong id="statRecords">0</strong></div><div class="stat"><span>Usuarios reales</span><strong>0</strong></div><div class="stat"><span>Integraciones</span><strong>0</strong></div></div>
+      <div class="panel"><h2>Controles de demostración</h2><p>La versión actual no tiene autenticación, permisos administrativos ni backend. No debe usarse para gestionar datos reales.</p><button class="btn secondary" id="clearDemo">Borrar registros de prueba</button><div id="adminMessage" class="message" aria-live="polite"></div></div>
+    </section>
+
+    <section class="page" id="page-proyecto">
+      <div class="page-heading"><span class="eyebrow">EL PROYECTO</span><h1>Una iniciativa independiente</h1></div>
+      <div class="panel"><h2>Propósito</h2><p>Explorar herramientas digitales que puedan contribuir a la gestión documental sanitaria en Panamá.</p><h2>Principios</h2><ul class="principles"><li>Privacidad y protección de datos.</li><li>Transparencia sobre el estado de desarrollo.</li><li>Supervisión profesional y humana.</li><li>Accesibilidad y diseño responsable.</li><li>Interoperabilidad solo mediante acuerdos y autorización.</li></ul><div class="notice">CertiMed AI Panamá no es una entidad médica ni una plataforma oficial del MINSA o CSS.</div></div>
+    </section>
+  </main>
+
+  <footer><div class="footer-brand"><img src="assets/logo.svg" width="32" height="32" alt=""><strong>CertiMed AI Panamá</strong></div><p>Innovación documental sanitaria · Prototipo independiente</p><div class="footer-links"><button data-page="proyecto">Acerca del proyecto</button><a href="docs/arquitectura.md">Arquitectura</a><a href="docs/roadmap.md">Hoja de ruta</a></div><small>© <span id="year"></span> CertiMed AI Panamá · Demo v0.1.0</small></footer>
+  <script src="app.js"></script>
+</body>
+</html>
